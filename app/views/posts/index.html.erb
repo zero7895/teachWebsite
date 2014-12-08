@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+	<html>
+		<head>
+			<title>Post Page</title>
+		</head>
+
+		<body>
+
+		This is post page.
+
+		<% @posts.each do |post| %>
+		    <%= post.content %>
+	    <% end %>
+
+	    <table>
+	 		<tr>
+	    		<th>Post</th>
+	    		<th>User</th>
+			</tr>
+			
+			<% @posts.all.each do |post| %>
+	  		<tr>
+				<td><%= post.content %></td>
+				<% if post.user %>
+				<td><%= post.user.name %></td>
+				<% end %>
+	    	</tr>
+	   		<% end %>
+		</table>
+
+		<%= link_to 'New Post for user' , new_user_path %>		
+
+		</body>
+	</html>
+
+
+
+

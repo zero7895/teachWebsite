@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  root :to => "users#index"
+  resources :posts
+  root :to => "users#home_page"
+  get '/home_page' => "users#home_page"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
