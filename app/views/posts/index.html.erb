@@ -7,10 +7,7 @@
 		<body>
 
 		This is post page.
-
-		<% @posts.each do |post| %>
-		    <%= post.content %>
-	    <% end %>
+		<p>==============</p>
 
 	    <table>
 	 		<tr>
@@ -28,6 +25,10 @@
 	   		<% end %>
 		</table>
 
+		<p>==============</p>
+		<%= link_to 'Show all users' , users_path %>
+		
+		<p>==============</p>
 		<%= link_to 'New Post for user' , new_user_path %>		
 
 		</body>
