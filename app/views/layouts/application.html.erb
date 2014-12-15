@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hometeach</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  	<title>Lesson 4 AM</title>
+  	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  	<%= csrf_meta_tags %>
+ 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src=" <%= asset_path("js/skel.min.js") %>" ></script>
+	<script src=" <%= asset_path("js/skel-panels.min.js") %>" ></script>
+	<script src=" <%= asset_path("js/init.js") %>" ></script>
+	<link rel="stylesheet" href=" <%= asset_path("css/skel-noscript.css") %> " />
+	<link rel="stylesheet" href=" <%= asset_path("css/style.css.erb") %>" />
+	<link rel="stylesheet" href=" <%= asset_path("css/style-desktop.css") %>" />
 
 
 </head>
+
 <body>
+		<!-- Header -->
+		<div id="header">
+			<div id="nav-wrapper"> 
+				<!-- Nav -->
+				<nav id="nav">
+					<ul>
+						<li class="active"><%= link_to "Homepage", home_page_path%></li>
+						<% if logged_in? %>
+							<li><%= link_to "Show Posts", posts_path%><li>
+							<li><%= link_to "Log Out", logout_path, method: :delete %></li>
+						<% else %>
+							<li><%= link_to "Login", login_path%></li>
+							<li><%= link_to "Sign up", register_path%><li>
+						<% end %>
+					</ul>
+				</nav>
+			</div>
+			
+			<div class="container"> 
+				
+				<!-- Logo -->
+				<div id="logo">
+					<h1>Lesson 4 AM </h1>
+					<!-- <span class="tag">By Nate</span> -->
+				</div>
+			</div>
+		</div>
+
+
   <% flash.each do |type, message| %>
   <div class="alert flash <%= type %>">
     <%= "flash: " + message %>
