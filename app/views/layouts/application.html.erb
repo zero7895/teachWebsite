@@ -11,8 +11,9 @@
 	<script src=" <%= asset_path("js/skel-panels.min.js") %>" ></script>
 	<script src=" <%= asset_path("js/init.js") %>" ></script>
 	<link rel="stylesheet" href=" <%= asset_path("css/skel-noscript.css") %> " />
-	<link rel="stylesheet" href=" <%= asset_path("css/style.css.erb") %>" />
 	<link rel="stylesheet" href=" <%= asset_path("css/style-desktop.css") %>" />
+
+<%= stylesheet_link_tag  'application', 'style', :media => "all",'data-turbolinks-track' => true %>
 
 
 </head>
