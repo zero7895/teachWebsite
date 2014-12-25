@@ -9,28 +9,26 @@
 		This is post page.
 		<p>==============</p>
 
-	    <table>
+	    <table class="table table-condensed" style="width:50%">
 	 		<tr>
 	    		<th>Post</th>
 	    		<th>User</th>
 			</tr>
-			
+
 			<% @posts.all.each do |post| %>
 	  		<tr>
-				<td><%= post.content %></td>
-				<% if post.user %>
-				<td><%= post.user.name %></td>
+	  			<% if post.user %>
+				<td style="width:50%"><%= post.content %></td>
+				<td style="width:50%"><%= post.user.name %></td>
 				<% end %>
 	    	</tr>
-	   		<% end %>
+	   		<% end %>		
+
 		</table>
 
 		<p>==============</p>
 		<%= link_to 'Show all users' , users_path %>
 		
-		<p>==============</p>
-		<%= link_to 'Create a user' , new_user_path %>		
-
 		<p>==============</p>
 		<%= link_to 'Create a post' , new_post_path %>		
 
