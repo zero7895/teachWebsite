@@ -1,17 +1,9 @@
 Rails.application.routes.draw do
-  get 'user_sessions/new' 
-  get 'user_sessions/create'
-
-  resources :user_sessions, only: [:new, :create]
-  resources :password_resets, only: [:new, :create, :edit, :update]
-  resources :users
-  resources :posts
-  root :to => "users#home_page"
+  root 'lessons#android_lesson'
+  get '/android_lesson' => 'lessons#android_lesson' ,as: :android_lesson
+  get '/python_lesson' => 'lessons#python_lesson' ,as: :python_lesson
   
-  get '/home_page' => "users#home_page", :as => 'home_page'
-  get '/login' => "user_sessions#new", :as => 'login'
-  get '/register' => "users#new", :as => 'register'
-  delete '/logout' => "user_sessions#destroy", :as => 'logout'
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
