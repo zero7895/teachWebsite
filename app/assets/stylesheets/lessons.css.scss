@@ -1,3 +1,12 @@
 // Place all the styles related to the lessons controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ul.leftList {
+	color: #cc0000;
+	letter-spacing: 2px;
+	list-style-type: none;
+	list-style-type: circle;
+	text-align: left;
+	padding-left: 120px;
+	font-size: 18px;
+}
